@@ -9,7 +9,10 @@ function findRes() {
   })
   console.log(numbers + values)
   document.getElementById("desc").innerHTML = "These are the numbers that take the longest to result in 1, with their respective number of times: "
-  let table = document.getElementById("numTable")
+  makeTable(numbers, values)
+}
+function makeTable(numbers, values){
+    let table = document.getElementById("numTable")
   numbers.forEach(number => {
     let n = numbers.indexOf(number);
     let row = table.insertRow(n+1);
@@ -18,7 +21,6 @@ function findRes() {
     cell1.innerHTML = number;
     cell2.innerHTML = values[n];
   })
-  
 }
 const m = new Map();
 function RGame(number) {
