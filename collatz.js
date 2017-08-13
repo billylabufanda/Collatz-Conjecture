@@ -4,7 +4,7 @@ function findRes() {
 //       let result = twoNumbers(n1, n2).forEach(arr => {
     
 //     })
-  document.getElementById("result").innerHTML = "These are the numbers that take the longest: " + twoNumbers(n1, n2).join(", ")
+  document.getElementById("result").innerHTML = "These are the numbers that take the longest to result in 1, with their respective number of times" + twoNumbers(n1, n2).join("; ")
 }
 const m = new Map();
 function RGame(number) {
