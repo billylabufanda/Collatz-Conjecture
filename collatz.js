@@ -1,10 +1,24 @@
 function findRes() {
   let n1 = parseInt(document.getElementById("firstNum").value, 10)
   let n2 = parseInt(document.getElementById("lastNum").value, 10)
-//       let result = twoNumbers(n1, n2).forEach(arr => {
-    
-//     })
-  document.getElementById("result").innerHTML = "These are the numbers that take the longest to result in 1, with their respective number of times" + twoNumbers(n1, n2).join("; ")
+  let numbers = twoNumbers(n1, n2).map(arr =>{
+    return arr.slice(0,1)
+  })
+  let values = twoNumbers(n1, n2).map(arr =>{
+    return arr.slice(1)
+  })
+  console.log(numbers + values)
+  document.getElementById("desc").innerHTML = "These are the numbers that take the longest to result in 1, with their respective number of times: "
+  let table = document.getElementById("numTable")
+  numbers.forEach(number => {
+    let n = numbers.indexOf(number);
+    let row = table.insertRow(n+1);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    cell1.innerHTML = number;
+    cell2.innerHTML = values[n];
+  })
+  
 }
 const m = new Map();
 function RGame(number) {
@@ -40,27 +54,16 @@ function twoNumbers(startN, endN) {
   return entries.slice(0, 10)
 }
 
-result = twoNumbers(1,10).map(arr =>{
-  console.log(arr.slice(1))
-})
-console.log("hi "+result)
-
 
 
 
 
 //Fibonacci
 function fib(n){
-  let x = 1
-  if(n===1){
+  if (n <= 1){
     return 1
   } else{
-    for(i=0; i<= n; i++){
-      x+x
-      x++
-      console.log(x)
-    }
-    return x
+    return fib(n-1) + fib(n-2);
   }
 }
-fib(10)
+console.log(fib(6))
