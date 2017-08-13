@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width">
   <title>Collatz Conjecture</title>
 </head>
+
 <body>
-First Number:
-<input type="number" id="firstNum">
-<br> Last Number:
-<input type="number" id="lastNum">
-<br>
-<input type="button" onclick="findRes()" value="Submit" id="numbButton">
-<p id="result">
-  These are the numbers that take the longest to result in 1, with their respective number of times:
-</p>
+  First Number:
+  <input type="number" id="firstNum">
+  <br> Last Number:
+  <input type="number" id="lastNum">
+  <br>
+  <input type="button" onclick="findRes()" value="Submit" id="numbButton">
+  <p id="desc">
+    These are the numbers that take the longest to result in 1, with their respective number of times:
+  </p>
+  <table id="numTable" style="width:100%">
+    <tr>
+      <th>Number</th>
+      <th>Number of Times</th>
+    </tr>
+  </table>
+
+</body>
+
+</html>
 <script src="collatz.js"></script>
 </body>
+
 </html>
